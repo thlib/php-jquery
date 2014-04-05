@@ -39,7 +39,7 @@ use ThinkHTML\jQuery\jQuery;
 // HTML parser and document scope creation for jQuery
 class HTML5Parser
 {
-	public $dom, $err, $jquery, $error_handle, $extensions = array();
+	public $dom, $err, $jquery, $error_handle, $extensions = array(), $version = '1.0.0';;
 	public function __construct($options=array())
 	{
 		$default = array(
@@ -170,5 +170,38 @@ class HTML5Parser
 		});
 		return "<!DOCTYPE html>\r\n".$this->dom->saveHTML($this->dom);
 	}
+	/*
+	public static function innerHtml($node){
+		$html = '';
+		if($node instanceof DOMNode && $node->childNodes instanceof DOMNodeList)
+		{
+			foreach ($node->childNodes as $child) 
+			{
+				$html .= $child->ownerDocument->saveHTML($child);
+			}
+		}
+		return $html;
+	}
+	*/
+	/*
+	# http://www.php.net/manual/en/function.chr.php#55978
+	# will not convert entities for <> or any of the ASCII chars
+	public static function unicode_character_reference_decode($str){
+		return preg_replace("/&#(\d{2,5});/e", "self::unichr($1);", $str);
+	}
+	public static function unichr($dec) { 
+		if ($dec < 128) { 
+			$utf = chr($dec); 
+		} else if ($dec < 2048) { 
+			$utf = chr(192 + (($dec - ($dec % 64)) / 64)); 
+			$utf .= chr(128 + ($dec % 64)); 
+		} else { 
+			$utf = chr(224 + (($dec - ($dec % 4096)) / 4096)); 
+			$utf .= chr(128 + ((($dec % 4096) - ($dec % 64)) / 64)); 
+			$utf .= chr(128 + ($dec % 64)); 
+		} 
+		return $utf;
+	}
+	*/
 }
 
