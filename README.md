@@ -34,7 +34,7 @@ or load it using require
 Example
 -----------
 
-    $options = array('encoding'=>'utf-8');
+    $options = array('default_encoding'=>'utf-8');
     $parser = new HTML5Parser($options);
     $val = null;
     $parser->parse($html, function($document, $jquery) use(&$val){
