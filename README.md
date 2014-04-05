@@ -7,7 +7,7 @@ pre-alpha version
 I disliked phpQuery so I made a simple 1 to 1 port of jQuery 2.0 Source  
 It started as a couple of helper functions and grew to what it is now
 
-Lots of stuff is probably broken, no warranty what so ever.
+It is in an unfinished state because otherwise I would have never published it, lots of stuff is probably broken, no warranty what so ever.
 
 Dependencies
 -----------
