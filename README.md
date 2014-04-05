@@ -19,7 +19,7 @@ Dependencies
 Load it using autoload
 -----------
 
-Use the PSR autoloader
+Use the [PSR autoloader](https://gist.github.com/jwage/221634)
 
     $loader = require 'vendor/autoload.php';
 
