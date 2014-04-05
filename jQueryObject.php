@@ -12,7 +12,7 @@ use ThinkHTML\jQuery\jQuery;
 class jQueryObject implements Iterator, ArrayAccess, Countable
 {
 	const TYPE_TEXT = 3;
-	public $dom, $stack=array(), $context, $jquery;
+	public $dom, $stack=array(), $context, $jquery, $version = '1.0.0';
 	public function __construct(jQuery $jquery, $selector, $context=null)
 	{
 		$this->jquery = $jquery;
