@@ -159,6 +159,7 @@ TODO
 ----------
 
 - Add remaining functions
+- Add it to composer
 - Add unit tests
 - Implement `$keep_scripts` param in `parseHTML($html, $keep_scripts)`
 - Make the css_converter customizable
