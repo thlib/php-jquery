@@ -47,7 +47,7 @@ Selector
 ----------
 
 starts with `<` = html  
-starts with `/` = xpath  
+starts with `/` (or any of the xpath keywords) = xpath  
 everything else = css3  
 
     $jquery('.myclass'); // selects all elements with the class name "myclass" with CSS
