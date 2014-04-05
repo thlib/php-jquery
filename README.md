@@ -77,7 +77,7 @@ Plugins / Extensions
 
     jQuery().each
 
-jQuery Collection plugin
+###jQuery Collection plugin
 
 attach
 
@@ -95,7 +95,7 @@ use
     });
     </script>
     
-PHP jQuery Collection plugin
+###PHP jQuery Collection plugin
 
 attach
 
