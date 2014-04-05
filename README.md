@@ -40,7 +40,7 @@ Example
     $val = null;
     $parser->parse($html, function($document, $jquery) use(&$val){
       $val = $jquery('input')->prop('disabled',true)->val();
-      $nodes_array = $jquery.parseHTML('<div>');
+      $nodes_array = $jquery->parseHTML('<div>');
     });
 
 Selector
