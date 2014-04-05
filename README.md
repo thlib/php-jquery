@@ -77,6 +77,40 @@ Plugins / Extensions
 
     jQuery().each
 
+jQuery Collection plugin
+
+attach
+
+    <script>
+    jQuery.fn.color = function(color){
+        this.css( "color", color );
+    };
+    </scrpt>
+    
+use
+
+    <script>
+    jQuery(function(){
+        jQuery('a').color('red');
+    });
+    </script>
+    
+PHP jQuery Collection plugin
+
+attach
+
+    $parser->extend(function($dom, $jquery){
+        $jquery->fn->color = function($that, $color){
+            $that->css( "color", $color);
+        };
+    });
+
+use
+
+    $parser->parse($html, function($dom, $jquery){
+        $jquery('a')->color('red');
+    });
+
 In order to support php5.3 the first argument passed to the jquery collection extension function will be an instance of the current jquery collection object (called `$that` in the example below).  
 All the other arguments are passed to the function are passed after `$that` (as normal)  
 While the jQuery class extensions do not need $that
