@@ -41,7 +41,7 @@ use HTML5_Parser as HTML5_Parser;
 // The jQuery object
 class jQuery
 {
-	public $dom, $fn, $options=array();
+	public $dom, $fn, $options=array(), $version = '1.0.0';
 	public static $instance;
 	public function __construct(DOMDocument $dom, $options=array())
 	{
@@ -279,5 +279,24 @@ class jQuery
 			//trigger_error('Method '.$name.' does not exist in jQuery', E_USER_ERROR);
 		}
 	}
+	
+	/*
+	public static function nodeInnerHTML($node)
+	{
+		$html = ''; 
+		if($node instanceof DOMNode && $node->childNodes instanceof DOMNodeList)
+		{
+			foreach ($node->childNodes as $child) 
+			{
+				$html .= $child->ownerDocument->saveHTML($child);
+			}
+		}
+		return $html; 
+	}
+	public static function DOMouterHTML($dom, $node)
+	{
+		return $dom->saveHtml($node);
+	}
+	*/
 }
 
