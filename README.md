@@ -8,7 +8,7 @@ I disliked phpQuery so I made a simple 1 to 1 port of jQuery 2.0 Source
 It started as a couple of helper functions and grew to what it is now
 
 It is in an unfinished state because otherwise I would have never published it.  
-Lots of stuff is probably broken, no warranty what so ever.
+Lots of stuff could be broken, so try it first. I provide no warranty what so ever.
 
 Dependencies
 -----------
