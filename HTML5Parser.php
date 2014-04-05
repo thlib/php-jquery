@@ -39,7 +39,7 @@ use ThinkHTML\jQuery\jQuery;
 // HTML parser and document scope creation for jQuery
 class HTML5Parser
 {
-	public $dom, $err, $jquery, $error_handle, $extensions = array(), $version = '1.0.0';;
+	public $dom, $err, $jquery, $error_handle, $extensions = array(), $version = '1.0.0';
 	public function __construct($options=array())
 	{
 		$default = array(
