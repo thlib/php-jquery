@@ -164,7 +164,7 @@ TODO
 - Implement `$keep_scripts` param in `parseHTML($html, $keep_scripts)`
 - Make the css_converter customizable  
 
-            $options = array('css_converter'=>'SymfonyCSSSelector::toXPath');
-            $parser = new HTML5Parser($options);
+        $options = array('css_converter'=>'SymfonyCSSSelector::toXPath');
+        $parser = new HTML5Parser($options);
 
 
