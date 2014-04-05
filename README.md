@@ -152,8 +152,8 @@ NOTES
 ----------
 
 - Works with unicode (was surprisingly hard to achieve)
-- Supports multiple documents in parallel
-- `HTML5Parser::parse()` creates a context for the jquery object to work
+- Supports working with multiple documents at the same time, even within each others callbacks
+- `HTML5Parser::parse()` creates a context for the jquery object to work with
 
 TODO
 ----------
