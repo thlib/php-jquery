@@ -19,7 +19,7 @@ Dependencies
 Load it using autoload
 -----------
 
-Use the [PSR autoloader](https://gist.github.com/jwage/221634)
+Put the classes in /vendor/ThinkHTML/jQuery/ and use the [PSR autoloader](https://gist.github.com/jwage/221634)
 
     $loader = require 'vendor/autoload.php';
 
