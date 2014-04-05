@@ -52,7 +52,7 @@ everything else = css3
 
     $jquery('.myclass'); // selects all elements with the class name "myclass" with CSS
     $jquery('descendant::*[@id="myid"]'); // selects all elements with the id "myid" with XPath
-    $jquery('<div></div>'); // creates a div element in the current document
+    $jquery('<div></div>'); // creates a div element in the current document (but does not attach it)
     $document->getElementsById('myid'); // selects elements with id "myid" with a DOMDocument selector
 
 Options
