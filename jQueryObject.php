@@ -212,11 +212,7 @@ class jQueryObject implements Iterator, ArrayAccess, Countable
 				// Set text
 				foreach($that->stack as $i=>$el)
 				{
-					if(is_callable($args[0])){
-						$text = htmlspecialchars(call_user_func($i, $args[0]), ENT_QUOTES, 'UTF-8');
-					}else{
-						$text = htmlspecialchars($args[0], ENT_QUOTES, 'UTF-8');
-					}
+					$text = (is_callable($args[0]))? call_user_func($i, $args[0]): $args[0];
 					$text_node = $el->ownerDocument->createTextNode($text);
 					$that->removeChildren($el);
 					$el->appendChild($text_node);
