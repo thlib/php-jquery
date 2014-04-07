@@ -34,6 +34,8 @@ use \stdClass;
 use \Exception;
 use \DOMDocument;
 use \DOMXPath;
+use \DOMNodeList;
+use \DOMNode;
 use ThinkHTML\jQuery\jQueryObject;
 use ThinkHTML\jQuery\SymfonyCSSSelector;
 use HTML5_Parser as HTML5_Parser;
