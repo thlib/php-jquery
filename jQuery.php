@@ -30,12 +30,8 @@ http://learn.jquery.com/plugins/basic-plugin-creation/
 
 namespace ThinkHTML\jQuery;
 
-use \stdClass;
-use \Exception;
-use \DOMDocument;
-use \DOMXPath;
-use \DOMNodeList;
-use \DOMNode;
+use \stdClass,\Exception;
+use \DOMDocument,\DOMXPath,\DOMNodeList,\DOMNode;
 use ThinkHTML\jQuery\jQueryObject;
 use ThinkHTML\jQuery\SymfonyCSSSelector;
 use HTML5_Parser as HTML5_Parser;
