@@ -2,13 +2,9 @@
 
 namespace ThinkHTML\jQuery;
 
-use \Iterator;
-use \ArrayAccess;
-use \Countable;
-use \Exception;
+use \Iterator,\ArrayAccess,\Countable,\Exception;
+use \DOMNodeList,\DOMNode;
 use ThinkHTML\jQuery\jQuery;
-use \DOMNodeList;
-use \DOMNode;
 
 // The object returned by jQuery()
 class jQueryObject implements Iterator, ArrayAccess, Countable
