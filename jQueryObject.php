@@ -7,6 +7,8 @@ use \ArrayAccess;
 use \Countable;
 use \Exception;
 use ThinkHTML\jQuery\jQuery;
+use \DOMNodeList;
+use \DOMNode;
 
 // The object returned by jQuery()
 class jQueryObject implements Iterator, ArrayAccess, Countable
