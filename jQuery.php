@@ -43,7 +43,10 @@ class jQuery
 	public static $instance;
 	public function __construct(DOMDocument $dom, $options=array())
 	{
-		$this->options = $options;
+		$this->options = array_replace(array(
+			'data_camel_case'=>true,
+			'use_css'=>true,
+		), $options);
 		$this->fn = new stdClass;
 		$this->dom = $dom;
 		$this->error = function($msg){
@@ -175,7 +178,7 @@ class jQuery
 		$jquery = $this;
 		$nodes = array();
 		if(is_string($content) && strpos($content,'<')===false){
-			$xpath = self::isXPath($content)? $content : self::toXPath($content);
+			$xpath = (!$this->options['use_css'] || self::isXPath($content))? $content : self::toXPath($content);
 			$domxpath = new DOMXPath($this->dom);
 			if($context===null){
 				$nodelist = $domxpath->query($xpath);
@@ -207,7 +210,7 @@ class jQuery
 		if(is_array($content)){
 			$nodes = $content;
 		}else
-		if($content instanceof self){
+		if($content instanceof jQueryObject){
 			$nodes = $content->stack;
 		}else
 		if($content instanceof DOMNodeList){
