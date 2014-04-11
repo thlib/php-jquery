@@ -70,6 +70,7 @@ class jQueryObject implements Iterator, ArrayAccess, Countable
 					}
 				}
 			}
+			return $that;
 		};
 		$fn->prependTo = function($that, $selector) use ($jquery)
 		{
@@ -87,6 +88,7 @@ class jQueryObject implements Iterator, ArrayAccess, Countable
 					$el->appendChild($child2);
 				}
 			}
+			return $that;
 		};
 		$fn->appendTo = function($that, $selector) use ($jquery)
 		{
@@ -104,6 +106,7 @@ class jQueryObject implements Iterator, ArrayAccess, Countable
 					$el->parentNode->insertBefore($child2, $el);
 				}
 			}
+			return $that;
 		};
 		$fn->insertBefore = function($that, $selector) use ($jquery)
 		{
@@ -121,6 +124,7 @@ class jQueryObject implements Iterator, ArrayAccess, Countable
 					$that->nodeInsertAfter($new, $el);
 				}
 			}
+			return $that;
 		};
 		$fn->insertAfter = function($that, $selector) use ($jquery)
 		{
@@ -364,6 +368,7 @@ class jQueryObject implements Iterator, ArrayAccess, Countable
 					break;
 				}
 			}
+			return $that;
 		};
 		$fn->param = function($that, $arr) use ($jquery)
 		{
@@ -546,9 +551,9 @@ class jQueryObject implements Iterator, ArrayAccess, Countable
 		{
 			throw new Exception('Not implemented');
 		};
-		$fn->add = function($that) use ($jquery)
+		$fn->add = function($that, $selector) use ($jquery)
 		{
-			throw new Exception('Not implemented');
+			return $jquery(array_merge($that->stack, $jquery($selector)->stack)); 
 		};
 		$fn->andSelf = function($that) use ($jquery)
 		{
@@ -737,11 +742,39 @@ class jQueryObject implements Iterator, ArrayAccess, Countable
 		};
 		$fn->prevUntil = function($that) use ($jquery)
 		{
-			throw new Exception('Not implemented');
+			$not = $jquery($selector);
+			$collection = array();
+			foreach($that->stack as $el){
+				$node = $el;
+				while($node->previousSibling){
+					$node = $node->previousSibling;
+					if($not->is($node)){
+						break;
+					}
+					if($node->nodeType!==3){
+						$collection[] = $node;
+					}
+				}
+			}
+			return $that->pushStack($collection);
 		};
-		$fn->nextUntil = function($that) use ($jquery)
+		$fn->nextUntil = function($that, $selector) use ($jquery)
 		{
-			throw new Exception('Not implemented');
+			$not = $jquery($selector);
+			$collection = array();
+			foreach($that->stack as $el){
+				$node = $el;
+				while($node->nextSibling){
+					$node = $node->nextSibling;
+					if($not->is($node)){
+						break;
+					}
+					if($node->nodeType!==3){
+						$collection[] = $node;
+					}
+				}
+			}
+			return $that->pushStack($collection);
 		};
 		// Get the closest next sibling that matches the selector
 		$fn->nextClosest = function($that, $selector) use ($jquery)
