@@ -173,6 +173,7 @@ TODO
 - Add it to composer
 - Add unit tests
 - Can't use some forms of xpath when searching within a context, added option to disable css and treat everything as xpath
+- Simplify code by duplicating the functions attached to fn in jquery, for example `$.after($node, $node2);`
 - $jquery()->filter(); not working properly
 - Implement `$keep_scripts` param in `parseHTML($html, $keep_scripts)`
 - Make the css_converter customizable  
