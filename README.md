@@ -35,6 +35,7 @@ or load it using require
 Example
 -----------
 
+    use ThinkHTML\jQuery\HTML5Parser;
     $options = array('default_encoding'=>'utf-8');
     $parser = new HTML5Parser($options);
     $val = null;
@@ -42,6 +43,16 @@ Example
       $val = $jquery('input')->prop('disabled',true)->val();
       $nodes_array = $jquery->parseHTML('<div>');
     });
+    
+You can use the jquery wrapper separately
+----------
+
+You don't have to use HTML5Parser to use the jQuery class
+
+    $dom = new \DOMDocument;
+    $dom->loadHTML('<div></div>');
+    $jquery = new jQuery($dom);
+    $jquery('div')->append('<span>Hello world</span>');
 
 Selector
 ----------
@@ -161,6 +172,8 @@ TODO
 - Add remaining functions
 - Add it to composer
 - Add unit tests
+- Can't use some forms of xpath when searching within a context, added option to disable css and treat everything as xpath
+- $jquery()->filter(); not working properly
 - Implement `$keep_scripts` param in `parseHTML($html, $keep_scripts)`
 - Make the css_converter customizable  
 
