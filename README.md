@@ -169,6 +169,7 @@ NOTES
 TODO
 ----------
 
+- Test setting attribute on detached elements
 - Add remaining functions
 - Add it to composer
 - Add unit tests
