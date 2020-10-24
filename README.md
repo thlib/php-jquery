@@ -3,7 +3,7 @@ I recommend using this instead: https://github.com/technosophos/querypath
 PHP jQuery
 ==========
 
-PHP port of jQuery  
+PHP port of jQuery 2.0
 pre-alpha version
 
 I disliked phpQuery so I made a simple 1 to 1 port of jQuery 2.0 Source  
