@@ -1,3 +1,5 @@
+I recommend using this instead: https://github.com/technosophos/querypath
+
 PHP jQuery
 ==========
 
